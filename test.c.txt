@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include "CommentConvert.h"
+
+int main()
+{
+	FILE *pfRead = NULL;
+	FILE *pfWrite = NULL;
+	pfRead = fopen("input.c", "r");
+	if (pfRead == NULL)
+	{
+		perror("open file for read");
+		exit(EXIT_FAILURE);
+	}
+	pfWrite = fopen("output.c","w");
+	if (pfWrite == NULL)
+	{
+		perror("open file for write");
+		exit(EXIT_FAILURE);
+	}
+	DoConvertWork(pfRead, pfWrite);
+	fclose(pfRead);
+	fclose(pfWrite);
+	system("pause");
+	return 0;
+}

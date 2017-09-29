@@ -1,0 +1,19 @@
+#ifndef __COMMENT_CONVERT_H__
+#define __COMMENT_CONVERT_H__
+
+#include <stdio.h>
+#include <stdlib.h>
+enum Status
+{
+	NUL_STATUS,
+	C_STATUS,
+	CPP_STATUS,
+	END_STATUS
+};
+
+void DoConvertWork(FILE* pfIn, FILE* pfOut);
+void DoNulStatus(FILE* pfIn, FILE* pfOut, enum Status* status);
+void DoCStatus(FILE* pfIn, FILE* pfOut, enum Status* status);
+void DoCppStatus(FILE* pfIn, FILE* pfOut, enum Status* status);
+
+#endif//__COMMENT_CONVERT_H__
